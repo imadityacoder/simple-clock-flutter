@@ -37,6 +37,7 @@ dependencies:
   one_clock: ^2.0.1
   carousel_slider: ^5.0.0
   shared_preferences: ^2.1.0
+  flutter_tts: ^4.2.5
 
 
 
