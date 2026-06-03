@@ -31,19 +31,10 @@ android {
         versionName = flutter.versionName
     }
 
-    signingConfigs {
-        create("release") {
-            // Generate keystore: keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
-            storeFile = file(System.getenv("ANDROID_KEYSTORE_PATH") ?: "${System.getProperty("user.home")}/key.jks")
-            storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: "android"
-            keyAlias = System.getenv("ANDROID_KEY_ALIAS") ?: "key"
-            keyPassword = System.getenv("ANDROID_KEY_PASSWORD") ?: "android"
-        }
-    }
+    // Release signing removed: build will use default unsigned APK/AAB
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = false
             isShrinkResources = false
             proguardFiles(
